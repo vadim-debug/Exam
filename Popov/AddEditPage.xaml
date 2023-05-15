@@ -1,0 +1,32 @@
+﻿<Page x:Class="Popov.AddEditPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Popov"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddEditPage" Background="White">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="106*"/>
+            <RowDefinition Height="109*"/>
+            <RowDefinition Height="111*"/>
+            <RowDefinition Height="124*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="129*"/>
+            <ColumnDefinition Width="271*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="Пользователь" VerticalAlignment="Center"/>
+        <TextBlock Grid.Row="1" Text="Товар" VerticalAlignment="Top"/>
+        <TextBlock  Grid.Row="2" Text="Имя" VerticalAlignment="Center"/>
+        <TextBox Grid.Column="1"  Text="{Binding Name}" Grid.Row="2"/>
+        
+        <ComboBox Grid.Column="1" x:Name="CmbUser" SelectedItem="{Binding Users}" DisplayMemberPath="Login" Width="420"/>
+        <ComboBox Grid.Column="1" x:Name="CmbProd" SelectedItem="{Binding Product}" DisplayMemberPath="Name" Grid.Row="1"  Width="420"/>
+        <Button Grid.Column="1" Content="Сохранить" Name="SaveBtn" Click="SaveBtn_Click" HorizontalAlignment="Left" Margin="20,26,0,0" Grid.Row="3" VerticalAlignment="Top" Width="211" Height="62"/>
+
+    </Grid>
+</Page>
